@@ -24,8 +24,7 @@ For detailed explanation on how things work, check out the [Nuxt.js](https://git
 
 ## WordPress Requirements
 
-Plugin: [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
-Plugin: [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/)
+Plugins [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) & [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/)
 
 ## Twitch Requirements
 
