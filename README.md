@@ -1,4 +1,4 @@
-# Malicious IntentionsStream Team App
+# Malicious Intentions Stream Team App
 
 > This Project Utilizes Nuxt.js, Vuetify.js, WordPress API, Mixer API, Twitch API
 
