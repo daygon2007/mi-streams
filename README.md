@@ -1,6 +1,6 @@
-# mi
+# Malicious IntentionsStream Team App
 
-> Nuxt.js + Vuetify.js project
+> This Project Utilizes Nuxt.js, Vuetify.js, WordPress API, Mixer API, Twitch API
 
 ## Build Setup
 
@@ -20,3 +20,13 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
+
+
+## WordPress Requirements
+
+Plugin: [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
+Plugin: [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/)
+
+## Twitch Requirements
+
+You will have to have a Twitch account and login into https://glass.twitch.tv, click "Apps", and click "Register Your Application". Fill out the info and you wil receive your CLIENT-ID
