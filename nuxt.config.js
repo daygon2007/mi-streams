@@ -17,7 +17,11 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: [{src: '~/plugins/vuetify.js'}],
+  plugins: [
+    {src: '~/plugins/vuetify.js'},
+    {src: '~/plugins/font-awesome.js'},
+    {src: '~/plugins/gameStats.js'}
+    ],
   css: [
     '~/assets/style/app.styl'
   ],
@@ -62,6 +66,9 @@ module.exports = {
           })
         ]
       }
+    },
+    env: {
+      browser: true
     }
   }
 }

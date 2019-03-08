@@ -64,11 +64,12 @@
         right: false,
         rightDrawer: false,
         title: 'Malicious Intentions Stream Team',
-        users: []
+        users: [],
+        custID: null
       }
     },
     created () {
-      axios.get('WORDPRESS API URL ENDPOINT')
+      axios.get('http://www.maliciousintentions.gg/wp-json/wp/v2/streamers')
         .then(response => {
           this.users = response.data
         }).catch(e => {
