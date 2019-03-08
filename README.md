@@ -29,3 +29,11 @@ Plugins [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-f
 ## Twitch Requirements
 
 You will have to have a Twitch account and login into https://glass.twitch.tv, click "Apps", and click "Register Your Application". Fill out the info and you wil receive your CLIENT-ID
+
+### TODO before public beta lauch
+
+* Remove dependency of WordPress
+* Add dependency for Firebase
+* Figure out a way to call a different firebase instance
+* Create Dashboard
+* Setup Vuex store to store login state
