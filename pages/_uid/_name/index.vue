@@ -77,7 +77,7 @@
                   <div id="bio" v-html="streamer.acf.streamer_bio"></div>
                   <div v-if="game">
                     This is where stats should go
-                    <GameStats :gameTitle="game" :apexPF="apexPF" :apexUN="apexUN" :pubgPF="pubgPF" :pubgUN="pubgUN" v-if="game"></GameStats>
+                    <GameStats :gameTitle="game" :apexPF="apexPF" :apexUN="apexUN" :pubgPF="pubgPF" :pubgUN="pubgUN" :fortniteUN="fortniteUN" v-if="game"></GameStats>
                   </div>
                 </v-flex>
               </v-layout>
@@ -105,15 +105,16 @@
         online: null,
         twitchOnline: null,
         channel: null,
-        /* game: null, */
+        game: null,
         /* game: "PLAYERUNKNOWN'S BATTLEGROUNDS", */
         /* game: 'Apex Legends', */
-        game: 'Fortnite',
+        /* game: 'Fortnite', */
         stats: null,
         apexUN: null,
         apexPF: null,
         pubgUN: null,
-        pubgPF: null
+        pubgPF: null,
+        fortniteUN: null
       }
     },
     created () {
@@ -127,6 +128,7 @@
           this.apexPF = this.users[0].acf.apex_legends_platform
           this.pybgUN = this.users[0].acf.playerunknowns_battlegrounds_user_name
           this.pubgPF = this.users[0].acf.playerunknowns_battlegrounds_platform
+          this.fortniteUN = this.users[0].acf.fortnite_user_name
           /* ==========CALL MIXER========== */
           if (this.mixerUser !== '') {
             axios.get('https://mixer.com/api/v1/channels/' + this.mixerUser)

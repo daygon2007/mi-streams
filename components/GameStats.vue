@@ -966,7 +966,7 @@
 <script>
   import axios from 'axios'
   export default {
-    props: ['gameTitle', 'apexPF', 'apexUN', 'pubgPF', 'pubgUN'],
+    props: ['gameTitle', 'apexPF', 'apexUN', 'pubgPF', 'pubgUN', 'fortniteUN'],
     data: function () {
       return {
         game: this.gameTitle,
@@ -1051,7 +1051,8 @@
         KBmatchesPlayed: null,
         GPTotalKills: null,
         GPTotalWins: null,
-        GPmatchesPlayed: null
+        GPmatchesPlayed: null,
+        empty: ''
       }
     },
     created () {
@@ -1173,7 +1174,7 @@
           })
       }
       if (this.game === 'Fortnite') {
-        axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=daygon07')
+        axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=' + this.fortniteUN)
           .then(response => {
             // console.log(response)
             this.uid = response.data.uid
@@ -1191,12 +1192,43 @@
                     this.placetop5 = placetop5
                   }
                 }
-                var duo = new CareerStats(res.data.data.keyboardmouse.defaultduo.default)
-                var solo = new CareerStats(res.data.data.keyboardmouse.defaultsolo.default)
-                var squad = new CareerStats(res.data.data.keyboardmouse.defaultsquad.default)
-                var GPduo = new CareerStats(res.data.data.gamepad.defaultduo.default)
-                var GPsolo = new CareerStats(res.data.data.gamepad.defaultsolo.default)
-                var GPsquad = new CareerStats(res.data.data.gamepad.defaultsquad.default)
+                var duo
+                var solo
+                var squad
+                var GPduo
+                var GPsolo
+                var GPsquad
+                // Make Sure Everything is Defined
+                if (typeof res.data.data.keyboardmouse.defaultduo === 'undefined') {
+                  duo = new CareerStats(this.empty)
+                } else {
+                  duo = new CareerStats(res.data.data.keyboardmouse.defaultduo.default)
+                }
+                if (typeof res.data.data.keyboardmouse.defaultsolo === 'undefined') {
+                  solo = new CareerStats(this.empty)
+                } else {
+                  solo = new CareerStats(res.data.data.keyboardmouse.defaultsolo.default)
+                }
+                if (typeof res.data.data.keyboardmouse.defaultsquad === 'undefined') {
+                  squad = new CareerStats(this.empty)
+                } else {
+                  squad = new CareerStats(res.data.data.keyboardmouse.defaultsquad.default)
+                }
+                if (typeof res.data.data.gamepad.defaultduo === 'undefined') {
+                  GPduo = new CareerStats(this.empty)
+                } else {
+                  GPduo = new CareerStats(res.data.data.gamepad.defaultduo.default)
+                }
+                if (typeof res.data.data.gamepad.defaultsolo === 'undefined') {
+                  GPsolo = new CareerStats(this.empty)
+                } else {
+                  GPsolo = new CareerStats(res.data.data.gamepad.defaultsolo.default)
+                }
+                if (typeof res.data.data.gamepad.defaultsquad === 'undefined') {
+                  GPsquad = new CareerStats(this.empty)
+                } else {
+                  GPsquad = new CareerStats(res.data.data.gamepad.defaultsquad.default)
+                }
                 // Carrer Stats
                 this.TotalKills = duo.kills + solo.kills + squad.kills + GPduo.kills + GPsolo.kills + GPsquad.kills
                 console.log(solo.kills)
