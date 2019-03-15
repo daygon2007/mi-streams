@@ -12,7 +12,8 @@ import {
   VToolbar,
   VAlert,
   VTabs,
-  VImg
+  VImg,
+  VProgressCircular
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -28,6 +29,7 @@ Vue.use(Vuetify, {
     VToolbar,
     VAlert,
     VTabs,
-    VImg
+    VImg,
+    VProgressCircular
   }
 })

@@ -6,7 +6,18 @@
       <v-alert v-model="alertB" dismissible type="success" outline>
         Currently Supported Games: Apex Legends, Fortnite, & PlayerUnknown's Battlegrounds
       </v-alert>
-      <div v-for="(streamer, i) in users">
+      <v-layout row wrap v-if="loading">
+      <v-flex xs-12 class="text-xs-center" mt-5>
+        <v-progress-circular
+      indeterminate
+      color="purple"
+      :size="100"
+      class="text-xs-center align-center d-inline-block"
+      :width:="0"
+    ></v-progress-circular>
+      </v-flex>
+    </v-layout>
+      <div v-for="(streamer, i) in users" v-else>
           <div v-if="online == true">
             <div v-if="streamer.acf.mixer_user_name">
                 <div v-if="mixer.user">
@@ -97,6 +108,7 @@
       return {
         alertA: true,
         alertB: true,
+        loading: true,
         users: [],
         mixer: [],
         twitch: [0],
@@ -117,6 +129,7 @@
       }
     },
     created () {
+      this.loading = true
       axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
         .then(response => {
           this.users = response.data
@@ -157,18 +170,22 @@
                     .then(response => {
                       this.game = response.data.data[0].name
                       // console.log(response)
+                      this.loading = false
                     })
                 } else {
                   this.twitchOnline = false
+                  this.loading = false
                 }
               }).catch((err) => {
                 // this.errors.push(err)
                 console.log('error here ' + err)
+                this.loading = false
               })
           }
         }).catch((e) => {
           // this.errors.push(e)
           console.log(e)
+          this.loading = false
         })
     }
   }
