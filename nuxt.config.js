@@ -69,6 +69,7 @@ module.exports = {
     },
     env: {
       browser: true
-    }
+    },
+    mode: 'spa'
   }
 }

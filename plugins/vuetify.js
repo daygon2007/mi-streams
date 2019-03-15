@@ -11,7 +11,8 @@ import {
   VGrid,
   VToolbar,
   VAlert,
-  VTabs
+  VTabs,
+  VImg
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -26,6 +27,7 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     VAlert,
-    VTabs
+    VTabs,
+    VImg
   }
 })

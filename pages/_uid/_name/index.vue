@@ -76,7 +76,6 @@
                 <v-flex xs12>
                   <div id="bio" v-html="streamer.acf.streamer_bio"></div>
                   <div v-if="game">
-                    This is where stats should go
                     <GameStats :gameTitle="game" :apexPF="apexPF" :apexUN="apexUN" :pubgPF="pubgPF" :pubgUN="pubgUN" :fortniteUN="fortniteUN" v-if="game"></GameStats>
                   </div>
                 </v-flex>
@@ -118,7 +117,7 @@
       }
     },
     created () {
-      axios.get('http://www.maliciousintentions.gg/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
+      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
         .then(response => {
           this.users = response.data
           this.mixerUser = this.users[0].acf.mixer_user_name
@@ -130,7 +129,7 @@
           this.pubgPF = this.users[0].acf.playerunknowns_battlegrounds_platform
           this.fortniteUN = this.users[0].acf.fortnite_user_name
           /* ==========CALL MIXER========== */
-          if (this.mixerUser !== '') {
+          /* if (this.mixerUser !== '') {
             axios.get('https://mixer.com/api/v1/channels/' + this.mixerUser)
               .then(res => {
                 this.mixer = res.data
@@ -143,10 +142,10 @@
               }).catch(err => {
                 this.errors.push(err)
               })
-          }
+          } */
           // console.log(this.twitchUser)
           /* ==========CALL TWITCH========== */
-          /* if (this.twitchUser !== '') {
+          if (this.twitchUser !== '') {
             axios.get('https://api.twitch.tv/helix/streams?user_login=' + this.twitchUser, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Accept': 'application/vnd.twitchtv.v5+json' } })
               .then(res => {
                 this.twitch = res.data
@@ -166,7 +165,7 @@
                 // this.errors.push(err)
                 console.log('error here ' + err)
               })
-          } */
+          }
         }).catch((e) => {
           // this.errors.push(e)
           console.log(e)

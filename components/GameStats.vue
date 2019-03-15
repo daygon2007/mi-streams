@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs12>Stats For {{ game }}</v-flex>
+    <!--<v-flex xs12>Stats For {{ game }}</v-flex>-->
     <v-flex xs12 v-if="game == 'PLAYERUNKNOWN\'S BATTLEGROUNDS'">
       <v-tabs color="purple darken-3" dark slider-color="white" grow v-if="TotalKills">
         <v-tab ripple key="overall">Overall</v-tab>
@@ -467,7 +467,7 @@
         </v-tab-item>
       </v-tabs>
     </v-flex>
-    <v-flex xs12 v-if="game == 'Tom Clancy\'s Rainbow Six: Siege'">
+    <!--<v-flex xs12 v-if="game == 'Tom Clancy\'s Rainbow Six: Siege'">
       <v-tabs color="purple darken-3" dark slider-color="white" grow>
         <v-tab ripple key="overall">Overall</v-tab>
         <v-tab-item key="overall">
@@ -536,7 +536,7 @@
           </v-layout>
         </v-tab-item>
       </v-tabs>
-    </v-flex>
+    </v-flex>-->
     <v-flex xs12 v-if="game == 'Apex Legends'">
       <v-tabs color="purple darken-3" dark slider-color="white" grow v-if="Level">
         <v-tab ripple key="overall">Overall</v-tab>
