@@ -71,7 +71,7 @@
     created () {
       axios.get('https://www.malicious-intentions.com/wp-json/wp/v2/streamers')
         .then(response => {
-          console.log(response)
+          // console.log(response)
           this.users = response.data
         }).catch(e => {
           this.errors.push(e)
