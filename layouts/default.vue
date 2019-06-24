@@ -69,7 +69,7 @@
       }
     },
     created () {
-      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers')
+      axios.get('https://www.malicious-intentions.com/wp-json/wp/v2/streamers')
         .then(response => {
           this.users = response.data
         }).catch(e => {

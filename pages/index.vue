@@ -62,7 +62,7 @@
     created () {
       console.log(this.loading)
       this.loading = true
-      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers')
+      axios.get('https://www.malicious-intentions.com/wp-json/wp/v2/streamers')
         .then(response => {
           this.users = response.data
           this.loading = false
