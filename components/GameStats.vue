@@ -1129,11 +1129,11 @@
       if (this.game === 'Apex Legends') {
         axios.get('https://apextab.com/api/search.php?platform=' + this.apexPF + '&search=' + this.apexUN)
           .then(response => {
-            // console.log(response)
+            console.log(response)
             this.uid = response.data.results[0].aid
             axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
               .then(res => {
-                // console.log(res)
+                console.log(res)
                 var data = res.data
                 this.TotalKills = data.kills
                 this.Level = data.level
@@ -1170,7 +1170,7 @@
                 this.WraithDamage = data.damage_Wraith
                 this.WraithHeadshots = data.headshots_Wraith
                 this.WraithMatches = data.matches_Wraith
-                // console.log(data)
+                console.log(data)
               })
           })
       }
@@ -1181,7 +1181,7 @@
             this.uid = response.data.uid
             axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=' + this.uid)
               .then(res => {
-                // console.log(res.data.data)
+                console.log(res.data.data)
                 class CareerStats {
                   constructor ({ kills = 0, matchesplayed = 0, placetop12 = 0, placetop5 = 0, placetop1 = 0, placetop6 = 0, placetop3 = 0 }) {
                     this.kills = kills
@@ -1232,7 +1232,7 @@
                 }
                 // Carrer Stats
                 this.TotalKills = duo.kills + solo.kills + squad.kills + GPduo.kills + GPsolo.kills + GPsquad.kills
-                // console.log(solo.kills)
+                console.log(solo.kills)
                 this.TotalWins = duo.placetop1 + solo.placetop1 + squad.placetop1 + GPduo.placetop1 + GPsolo.placetop1 + GPsquad.placetop1
                 this.matchesPlayed = duo.matchesplayed + solo.matchesplayed + squad.matchesplayed + GPduo.matchesplayed + GPsolo.matchesplayed + GPsquad.matchesplayed
                 this.KBTotalKills = duo.kills + solo.kills + squad.kills
