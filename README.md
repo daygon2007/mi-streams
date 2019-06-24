@@ -1,27 +1,39 @@
-Welcome to Glitch
-=================
+# Malicious Intentions Stream Team App
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+> This Project Utilizes Nuxt.js, Vuetify.js, WordPress API, Mixer API, Twitch API
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+## Build Setup
 
-Find out more [about Glitch](https://glitch.com/about).
+``` bash
+# install dependencies
+$ npm install # Or yarn install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
 
-Your Project
-------------
+## WordPress Requirements
 
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+Plugins [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) & [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/)
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+## Twitch Requirements
 
+You will have to have a Twitch account and login into https://glass.twitch.tv, click "Apps", and click "Register Your Application". Fill out the info and you wil receive your CLIENT-ID
 
-Made by [Glitch](https://glitch.com/)
--------------------
+### TODO before public beta lauch
 
-\ ゜o゜)ノ
+* Remove dependency of WordPress
+* Add dependency for Firebase
+* Figure out a way to call a different firebase instance
+* Create Dashboard
+* Setup Vuex store to store login state
