@@ -1133,6 +1133,7 @@
             this.uid = response.data.results[0].aid
             axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
               .then(res => {
+                console.log(res)
                 var data = res.data
                 this.TotalKills = data.kills
                 this.Level = data.level
@@ -1176,7 +1177,7 @@
       if (this.game === 'Fortnite') {
         axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=' + this.fortniteUN)
           .then(response => {
-            // console.log(response)
+            console.log(response)
             this.uid = response.data.uid
             axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=' + this.uid)
               .then(res => {
