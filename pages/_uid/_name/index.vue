@@ -139,7 +139,7 @@
           this.channel = this.users[0].acf.twitch_user_name
           this.apexUN = this.users[0].acf.apex_legends_user_name
           this.apexPF = this.users[0].acf.apex_legends_platform
-          this.pbgUN = this.users[0].acf.playerunknowns_battlegrounds_user_name
+          this.pubgUN = this.users[0].acf.playerunknowns_battlegrounds_user_name
           this.pubgPF = this.users[0].acf.playerunknowns_battlegrounds_platform
           this.fortniteUN = this.users[0].acf.fortnite_user_name
           /* ==========CALL MIXER========== */
