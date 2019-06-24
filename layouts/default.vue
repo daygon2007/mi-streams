@@ -54,7 +54,7 @@
     data () {
       return {
         clipped: true,
-        drawer: false,
+        drawer: true,
         fixed: false,
         /* items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
