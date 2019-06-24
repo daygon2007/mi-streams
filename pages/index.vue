@@ -67,8 +67,8 @@
           // console.log(response)
           this.users = response.data
           this.loading = false
-          console.log(this.loading)
-          console.log(this.users)
+          // console.log(this.loading)
+          // console.log(this.users)
         }).catch(e => {
           this.errors.push(e)
           this.loading = false

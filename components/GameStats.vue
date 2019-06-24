@@ -1064,7 +1064,7 @@
             this.lastMatch = response.data.data[0].relationships.matches.data[0].id
             axios.get('https://api.pubg.com/shards/steam/players/' + this.uid + '/seasons/lifetime', { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
               .then(res => {
-                console.log(res)
+                console.log(JSON.stringify(res, null, 2))
                 var duo = res.data.data.attributes.gameModeStats['duo']
                 var duoFPP = res.data.data.attributes.gameModeStats['duo-fpp']
                 var solo = res.data.data.attributes.gameModeStats['solo']
@@ -1116,7 +1116,7 @@
               })
             axios.get('https://api.pubg.com/shards/' + this.pubgPF + '/matches/' + this.lastMatch, { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
               .then(res => {
-                cconsole.log(JSON.stringify(res, null, 2))
+                console.log(JSON.stringify(res, null, 2))
               })
           })
       }
@@ -1133,7 +1133,7 @@
             this.uid = response.data.results[0].aid
             axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
               .then(res => {
-                console.log(res)
+                // console.log(res)
                 var data = res.data
                 this.TotalKills = data.kills
                 this.Level = data.level
@@ -1170,18 +1170,18 @@
                 this.WraithDamage = data.damage_Wraith
                 this.WraithHeadshots = data.headshots_Wraith
                 this.WraithMatches = data.matches_Wraith
-                console.log(data)
+                // console.log(data)
               })
           })
       }
       if (this.game === 'Fortnite') {
         axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=' + this.fortniteUN)
           .then(response => {
-            console.log(response)
+            // console.log(response)
             this.uid = response.data.uid
             axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=' + this.uid)
               .then(res => {
-                console.log(res.data.data)
+                // console.log(res.data.data)
                 class CareerStats {
                   constructor ({ kills = 0, matchesplayed = 0, placetop12 = 0, placetop5 = 0, placetop1 = 0, placetop6 = 0, placetop3 = 0 }) {
                     this.kills = kills
@@ -1232,7 +1232,7 @@
                 }
                 // Carrer Stats
                 this.TotalKills = duo.kills + solo.kills + squad.kills + GPduo.kills + GPsolo.kills + GPsquad.kills
-                console.log(solo.kills)
+                // console.log(solo.kills)
                 this.TotalWins = duo.placetop1 + solo.placetop1 + squad.placetop1 + GPduo.placetop1 + GPsolo.placetop1 + GPsquad.placetop1
                 this.matchesPlayed = duo.matchesplayed + solo.matchesplayed + squad.matchesplayed + GPduo.matchesplayed + GPsolo.matchesplayed + GPsquad.matchesplayed
                 this.KBTotalKills = duo.kills + solo.kills + squad.kills
