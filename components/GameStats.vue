@@ -1059,7 +1059,7 @@
       if (this.game === "PLAYERUNKNOWN'S BATTLEGROUNDS") {
         axios.get('https://api.pubg.com/shards/steam/players?filter[playerNames]=' + this.pubgUN, { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
           .then(response => {
-            console.log(response)
+            console.log(JSON.stringify(response, null, 2))
             this.uid = response.data.data[0].id
             this.lastMatch = response.data.data[0].relationships.matches.data[0].id
             axios.get('https://api.pubg.com/shards/steam/players/' + this.uid + '/seasons/lifetime', { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
@@ -1116,7 +1116,7 @@
               })
             axios.get('https://api.pubg.com/shards/' + this.pubgPF + '/matches/' + this.lastMatch, { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
               .then(res => {
-                console.log(res)
+                cconsole.log(JSON.stringify(res, null, 2))
               })
           })
       }
