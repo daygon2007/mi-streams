@@ -25,19 +25,19 @@
     </v-layout>
     <v-layout row wrap v-else>
           <v-flex xs12 md2 mb-3 pa-3 :key="i"
-            :name="user.title.rendered"
+            :name="user.name"
             :uid="user.id"
             v-for="(user, i) in users">
             <v-card router
-            :to="'/user/' + user.title.rendered"
+            :to="'/user/' + user.name"
             class="text-xs-center"
             >
               <v-img
-                v-if="user.acf.streamer_logo" :src="user.acf.streamer_logo.sizes.medium" height="user.acf.streamer_logo.sizes.medium-height" width="user.acf.streamer_logo.sizes.medium-width" aspect-ratio="1"
+                v-if="user.avatar_urls.full" :src="user.avatar_urls.full" aspect-ratio="1"
               ></v-img>
       
               <v-card-title primary-title class="text-xs-center">
-                  <h3 class="headline mb-0 text-xs-center" align-center>{{ user.title.rendered}}</h3>
+                  <h3 class="headline mb-0 text-xs-center" align-center>{{ user.name}}</h3>
               </v-card-title>
       
               <v-card-actions>
@@ -62,13 +62,13 @@
     created () {
       console.log(this.loading)
       this.loading = true
-      axios.get('https://www.wickedvicious.com/wp-json/wp/v2/streamers')
+      axios.get('http://wickedvicious.com/wp-json/buddypress/v1/members')
         .then(response => {
-          // console.log(response)
+          console.log(response.data)
           this.users = response.data
           this.loading = false
           // console.log(this.loading)
-          // console.log(this.users)
+          console.log(this.users)
         }).catch(e => {
           this.errors.push(e)
           this.loading = false
