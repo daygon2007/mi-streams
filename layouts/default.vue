@@ -34,7 +34,7 @@
       >
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
       </v-btn>
-      <v-toolbar-title><nuxt-link to="/" class="logo"><img src="https://wickedvicious.com/wp-content/themes/wicked-vicious/theme/img/logo-full-header.png" height="50" width="50" id="logo"> {{ title }}</nuxt-link></v-toolbar-title>
+      <v-toolbar-title><nuxt-link to="/" class="logo"><img src="http://wickedvicious.com/wp-content/themes/wicked-vicious/theme/img/logo-full-header.png" height="50" width="50" id="logo"> {{ title }}</nuxt-link></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
@@ -71,7 +71,7 @@
     created () {
       axios.get('https://www.wickedvicious.com/wp-json/wp/v2/streamers')
         .then(response => {
-          // console.log(response)
+          console.log(response)
           this.users = response.data
         }).catch(e => {
           this.errors.push(e)
