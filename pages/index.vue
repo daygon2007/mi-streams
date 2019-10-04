@@ -62,7 +62,7 @@
     created () {
       console.log(this.loading)
       this.loading = true
-      axios.get('https://www.wickedvicious.com/wp-json/wp/v2/streamers')
+      axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers')
         .then(response => {
           // console.log(response)
           this.users = response.data
