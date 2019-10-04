@@ -179,7 +179,7 @@
                   this.loading = false
                 }
               }).catch((err) => {
-                this.errors.push(err)
+                // this.errors.push(err)
                 console.log('error here ' + err)
                 this.loading = false
               })
