@@ -43,7 +43,7 @@
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2018 | Developed by <a href="https://jonathon-harrelson.com" target="_blank">Jonathon Harrelson (Daygon07)</a></span>
+      <span>&copy; 2019 | Developed by <a href="https://jonathon-harrelson.com" target="_blank">Jonathon Harrelson (Daygon07)</a></span>
     </v-footer>
   </v-app>
 </template>
