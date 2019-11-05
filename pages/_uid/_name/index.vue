@@ -1,3 +1,4 @@
+npm run dev
 <template>
     <div>
       <v-alert v-model="alertA" dismissible type="warning" outline>
