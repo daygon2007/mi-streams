@@ -9,7 +9,7 @@
     <v-layout row wrap>
       <v-flex xs12 class="text-xs-center">
         <h1>Welcome To the Wicked Vicious Stream Team</h1>
-        <p>This is a simple app to see which MI official streamers are online, without having to login to any of the stream platforms, and see their stats for the game they're playing.</p>
+        <p>This is a simple app to see which WickedVicious official streamers are online, without having to login to any of the stream platforms, and see their stats for the game they're playing.</p>
       </v-flex>
     </v-layout>
     <v-layout row wrap v-if="loading">
