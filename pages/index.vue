@@ -8,13 +8,8 @@
       </v-alert>
     <v-layout row wrap>
       <v-flex xs12 class="text-xs-center">
-<<<<<<< HEAD
         <h1>Welcome To the Wicked Vicious Stream Team</h1>
         <p>This is a simple app to see which WickedVicious official streamers are online, without having to login to any of the stream platforms, and see their stats for the game they're playing.</p>
-=======
-        <h1>Welcome To the Malicious Intentions Stream Team</h1>
-        <p>This is a simple app to see which MI official streamers are online, without having to login to any of the stream platforms, and see their stats for the game they're playing.</p>
->>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
       </v-flex>
     </v-layout>
     <v-layout row wrap v-if="loading">
@@ -67,28 +62,16 @@
     created () {
       console.log(this.loading)
       this.loading = true
-<<<<<<< HEAD
       axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers')
         .then(response => {
-          // console.log(response)
           this.users = response.data
           this.loading = false
-          // console.log(this.loading)
-          // console.log(this.users)
-=======
-      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers')
-        .then(response => {
-          this.users = response.data
-          this.loading = false
-          console.log(this.loading)
-          console.log(this.users)
->>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
+
         }).catch(e => {
           this.errors.push(e)
           this.loading = false
         })
-      // axios.get();
-      // axios.get();
+
     }
   }
 </script>

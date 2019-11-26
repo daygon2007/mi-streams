@@ -1059,20 +1059,14 @@
       if (this.game === "PLAYERUNKNOWN'S BATTLEGROUNDS") {
         axios.get('https://api.pubg.com/shards/steam/players?filter[playerNames]=' + this.pubgUN, { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
           .then(response => {
-<<<<<<< HEAD
             console.log(JSON.stringify(response, null, 2))
-=======
             console.log(response)
->>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
             this.uid = response.data.data[0].id
             this.lastMatch = response.data.data[0].relationships.matches.data[0].id
             axios.get('https://api.pubg.com/shards/steam/players/' + this.uid + '/seasons/lifetime', { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
               .then(res => {
-<<<<<<< HEAD
                 console.log(JSON.stringify(res, null, 2))
-=======
                 console.log(res)
->>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
                 var duo = res.data.data.attributes.gameModeStats['duo']
                 var duoFPP = res.data.data.attributes.gameModeStats['duo-fpp']
                 var solo = res.data.data.attributes.gameModeStats['solo']
@@ -1124,11 +1118,8 @@
               })
             axios.get('https://api.pubg.com/shards/' + this.pubgPF + '/matches/' + this.lastMatch, { 'headers': { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNzc5Y2E0MC0zYzM4LTAxMzYtZTRkYy0zMzhmNTlhNzhmNzkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI2NTg2MDA4LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Im11bHRpLWdhbWUtZGFzaGJvYXJkIn0.SGv45sJPltP4RqMNBe9dFQoKuRHg5ITFr8BpA8Q2RUs', 'Accept': 'application/vnd.api+json' } })
               .then(res => {
-<<<<<<< HEAD
                 console.log(JSON.stringify(res, null, 2))
-=======
                 console.log(res)
->>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
               })
           })
       }
@@ -1141,18 +1132,15 @@
       if (this.game === 'Apex Legends') {
         axios.get('https://apextab.com/api/search.php?platform=' + this.apexPF + '&search=' + this.apexUN)
           .then(response => {
-<<<<<<< HEAD
             console.log(response)
             this.uid = response.data.results[0].aid
             axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
               .then(res => {
                 console.log(res)
-=======
             // console.log(response)
             this.uid = response.data.results[0].aid
             axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
               .then(res => {
->>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
                 var data = res.data
                 this.TotalKills = data.kills
                 this.Level = data.level
@@ -1192,7 +1180,9 @@
                 console.log(data)
               })
           })
+      })
       }
+                
       if (this.game === 'Fortnite') {
         axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=' + this.fortniteUN)
           .then(response => {

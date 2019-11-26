@@ -57,10 +57,6 @@
         clipped: true,
         drawer: true,
         fixed: false,
-        /* items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-        ], */
         miniVariant: false,
         right: false,
         rightDrawer: false,
@@ -70,22 +66,15 @@
       }
     },
     created () {
-
-      axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers')
-        .then(response => {
-          console.log(response)
       axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers')
         .then(response => {
           this.users = response.data
         }).catch(e => {
           this.errors.push(e)
         })
-      // axios.get();
-      // axios.get();
     }
   }
 </script>
-
 <style>
   .streamer-icon{
     float: right;
