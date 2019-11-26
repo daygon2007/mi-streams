@@ -6,7 +6,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+<<<<<<< HEAD
     title: 'Wicked Vicious Stream Team Viewer',
+=======
+    title: 'Malicious Intentions Stream Team Viewer',
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

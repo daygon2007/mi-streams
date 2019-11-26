@@ -131,7 +131,11 @@
     },
     created () {
       this.loading = true
+<<<<<<< HEAD
       axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
+=======
+      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
         .then(response => {
           this.users = response.data
           this.mixerUser = this.users[0].acf.mixer_user_name
@@ -139,10 +143,16 @@
           this.channel = this.users[0].acf.twitch_user_name
           this.apexUN = this.users[0].acf.apex_legends_user_name
           this.apexPF = this.users[0].acf.apex_legends_platform
+<<<<<<< HEAD
           this.pubgUN = this.users[0].acf.playerunknowns_battlegrounds_user_name
           this.pubgPF = this.users[0].acf.playerunknowns_battlegrounds_platform
           this.fortniteUN = this.users[0].acf.fortnite_user_name
           console.log('PUBG Username is: ' + this.pubgUN)
+=======
+          this.pbgUN = this.users[0].acf.playerunknowns_battlegrounds_user_name
+          this.pubgPF = this.users[0].acf.playerunknowns_battlegrounds_platform
+          this.fortniteUN = this.users[0].acf.fortnite_user_name
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
           /* ==========CALL MIXER========== */
           /* if (this.mixerUser !== '') {
             axios.get('https://mixer.com/api/v1/channels/' + this.mixerUser)
@@ -164,14 +174,23 @@
             axios.get('https://api.twitch.tv/helix/streams?user_login=' + this.twitchUser, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Accept': 'application/vnd.twitchtv.v5+json' } })
               .then(res => {
                 this.twitch = res.data
+<<<<<<< HEAD
                 //  console.log(res.data)
                 //  console.log(this.twitch.data[0].type)
+=======
+                // console.log(res.data)
+                // console.log(this.twitch.data[0].type)
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
                 if (this.twitch.data[0].type === 'live') {
                   this.twitchOnline = true
                   axios.get('https://api.twitch.tv/helix/games?id=' + this.twitch.data[0].game_id, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Accept': 'application/vnd.twitchtv.v5+json' } })
                     .then(response => {
                       this.game = response.data.data[0].name
+<<<<<<< HEAD
                       console.log(response)
+=======
+                      // console.log(response)
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
                       this.loading = false
                     })
                 } else {
@@ -179,13 +198,21 @@
                   this.loading = false
                 }
               }).catch((err) => {
+<<<<<<< HEAD
                 // this.error.push(err)
+=======
+                // this.errors.push(err)
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
                 console.log('error here ' + err)
                 this.loading = false
               })
           }
         }).catch((e) => {
+<<<<<<< HEAD
           this.errors.push(e)
+=======
+          // this.errors.push(e)
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
           console.log(e)
           this.loading = false
         })

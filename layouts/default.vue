@@ -34,7 +34,11 @@
       >
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
       </v-btn>
+<<<<<<< HEAD
       <v-toolbar-title><nuxt-link to="/" class="logo"><img src="http://wickedvicious.com/wp-content/themes/wicked-vicious/theme/img/logo-full-header.png" height="50" width="50" id="logo"> {{ title }}</nuxt-link></v-toolbar-title>
+=======
+      <v-toolbar-title><nuxt-link to="/" class="logo"><img src="http://www.malicious-intentions.com/wp-content/uploads/2018/06/MI_logo_Purple_only_2_15.png" height="50" width="50" id="logo"> {{ title }}</nuxt-link></v-toolbar-title>
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
@@ -43,7 +47,11 @@
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
+<<<<<<< HEAD
       <span>&copy; 2019 | Developed by <a href="https://jonathon-harrelson.com" target="_blank">Jonathon Harrelson (Daygon07)</a></span>
+=======
+      <span>&copy; 2018 | Developed by <a href="https://jonathon-harrelson.com" target="_blank">Jonathon Harrelson (Daygon07)</a></span>
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
     </v-footer>
   </v-app>
 </template>
@@ -63,19 +71,33 @@
         miniVariant: false,
         right: false,
         rightDrawer: false,
+<<<<<<< HEAD
         title: 'Wicked Vicious Stream Team',
+=======
+        title: 'Malicious Intentions Stream Team',
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
         users: [],
         custID: null
       }
     },
     created () {
+<<<<<<< HEAD
       axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers')
         .then(response => {
           console.log(response)
+=======
+      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers')
+        .then(response => {
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
           this.users = response.data
         }).catch(e => {
           this.errors.push(e)
         })
+<<<<<<< HEAD
+=======
+      // axios.get();
+      // axios.get();
+>>>>>>> ce60d23660e4b0d5a6cdd3138a04d955778bbe2f
     }
   }
 </script>
