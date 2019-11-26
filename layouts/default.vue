@@ -35,7 +35,6 @@
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
       </v-btn>
       <v-toolbar-title><nuxt-link to="/" class="logo"><img src="http://wickedvicious.com/wp-content/themes/wicked-vicious/theme/img/logo-full-header.png" height="50" width="50" id="logo"> {{ title }}</nuxt-link></v-toolbar-title>
-      <v-toolbar-title><nuxt-link to="/" class="logo"><img src="http://www.malicious-intentions.com/wp-content/uploads/2018/06/MI_logo_Purple_only_2_15.png" height="50" width="50" id="logo"> {{ title }}</nuxt-link></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
@@ -66,7 +65,7 @@
       }
     },
     created () {
-      axios.get('http://www.malicious-intentions.com/wp-json/wp/v2/streamers')
+      axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers')
         .then(response => {
           this.users = response.data
         }).catch(e => {

@@ -66,12 +66,10 @@
         .then(response => {
           this.users = response.data
           this.loading = false
-
         }).catch(e => {
           this.errors.push(e)
           this.loading = false
         })
-
     }
   }
 </script>

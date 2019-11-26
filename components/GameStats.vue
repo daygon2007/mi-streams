@@ -1137,52 +1137,51 @@
             axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
               .then(res => {
                 console.log(res)
-            // console.log(response)
-            this.uid = response.data.results[0].aid
-            axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
-              .then(res => {
-                var data = res.data
-                this.TotalKills = data.kills
-                this.Level = data.level
-                // Character Data
-                this.BangKills = data.kills_Bangalore
-                this.BangDamage = data.damage_Bangalore
-                this.BangHeadshots = data.headshots_Bangalore
-                this.BangMatches = data.matches_Bangalore
-                this.BloodKills = data.kills_Bloodhound
-                this.BloodDamage = data.damage_Bloodhound
-                this.BloodHeadshots = data.headshots_Bloodhound
-                this.BloodMatches = data.matches_Bloodhound
-                this.CausKills = data.kills_Caustic
-                this.CausDamage = data.damage_Caustic
-                this.CausHeadshots = data.headshots_Caustic
-                this.CausMatches = data.matches_Caustic
-                this.GibKills = data.kills_Gibraltar
-                this.GibDamage = data.damage_Gibraltar
-                this.GibHeadshots = data.headshots_Gibraltar
-                this.GibMatches = data.matches_Gibraltar
-                this.LifeKills = data.kills_Lifeline
-                this.LifeDamage = data.damage_Lifeline
-                this.LifeHeadshots = data.headshots_Lifeline
-                this.LifeMatches = data.matches_Lifeline
-                this.MirageKills = data.kills_Mirage
-                this.MirageDamage = data.damage_Mirage
-                this.MirageHeadshots = data.headshots_Mirage
-                this.MirageMatches = data.matches_Mirage
-                this.PathKills = data.kills_Pathfinder
-                this.PathDamage = data.damage_Pathfinder
-                this.PathHeadshots = data.headshots_Pathfinder
-                this.PathMatches = data.matches_Pathfinder
-                this.WraithKills = data.kills_Wraith
-                this.WraithDamage = data.damage_Wraith
-                this.WraithHeadshots = data.headshots_Wraith
-                this.WraithMatches = data.matches_Wraith
-                console.log(data)
+                // console.log(response)
+                this.uid = response.data.results[0].aid
+                axios.get(' https://apextab.com/api/player.php?aid=' + this.uid)
+                  .then(res => {
+                    var data = res.data
+                    this.TotalKills = data.kills
+                    this.Level = data.level
+                    // Character Data
+                    this.BangKills = data.kills_Bangalore
+                    this.BangDamage = data.damage_Bangalore
+                    this.BangHeadshots = data.headshots_Bangalore
+                    this.BangMatches = data.matches_Bangalore
+                    this.BloodKills = data.kills_Bloodhound
+                    this.BloodDamage = data.damage_Bloodhound
+                    this.BloodHeadshots = data.headshots_Bloodhound
+                    this.BloodMatches = data.matches_Bloodhound
+                    this.CausKills = data.kills_Caustic
+                    this.CausDamage = data.damage_Caustic
+                    this.CausHeadshots = data.headshots_Caustic
+                    this.CausMatches = data.matches_Caustic
+                    this.GibKills = data.kills_Gibraltar
+                    this.GibDamage = data.damage_Gibraltar
+                    this.GibHeadshots = data.headshots_Gibraltar
+                    this.GibMatches = data.matches_Gibraltar
+                    this.LifeKills = data.kills_Lifeline
+                    this.LifeDamage = data.damage_Lifeline
+                    this.LifeHeadshots = data.headshots_Lifeline
+                    this.LifeMatches = data.matches_Lifeline
+                    this.MirageKills = data.kills_Mirage
+                    this.MirageDamage = data.damage_Mirage
+                    this.MirageHeadshots = data.headshots_Mirage
+                    this.MirageMatches = data.matches_Mirage
+                    this.PathKills = data.kills_Pathfinder
+                    this.PathDamage = data.damage_Pathfinder
+                    this.PathHeadshots = data.headshots_Pathfinder
+                    this.PathMatches = data.matches_Pathfinder
+                    this.WraithKills = data.kills_Wraith
+                    this.WraithDamage = data.damage_Wraith
+                    this.WraithHeadshots = data.headshots_Wraith
+                    this.WraithMatches = data.matches_Wraith
+                    console.log(data)
+                  })
               })
           })
-      })
       }
-                
       if (this.game === 'Fortnite') {
         axios.get('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=' + this.fortniteUN)
           .then(response => {
