@@ -1,11 +1,6 @@
 <template>
   <v-container>
-    <v-alert v-model="alertA" dismissible type="warning" outline>
-        This app is currently in Alpha so there might be some bugs. As of now stats will only support PC versions of select games, however, work will be done to support all platforms in the future.
-      </v-alert>
-      <v-alert v-model="alertB" dismissible type="success" outline>
-        Currently Supported Games: Apex Legends, Fortnite, & PlayerUnknown's Battlegrounds
-      </v-alert>
+  <Notifications></Notifications>
     <v-layout row wrap>
       <v-flex xs12 class="text-xs-center">
         <h1>Welcome To the Wicked Vicious Stream Team</h1>
@@ -50,18 +45,27 @@
 </template>
 <script>
   import axios from 'axios'
+  import Notifications from '~/components/Notifications.vue'
+  
   export default {
+    components: {
+      Notifications
+    },
     data () {
       return {
         users: [],
-        alertA: true,
-        alertB: true,
         loading: true
       }
     },
     created () {
       console.log(this.loading)
       this.loading = true
+      /* if (this.alertA === null) {
+        this.alertA = false
+      }
+      if (this.alertB === null) {
+        this.alertB = false
+      } */
       axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers')
         .then(response => {
           this.users = response.data

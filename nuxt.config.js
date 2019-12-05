@@ -24,7 +24,8 @@ module.exports = {
   plugins: [
     {src: '~/plugins/vuetify.js'},
     {src: '~/plugins/font-awesome.js'},
-    {src: '~/plugins/gameStats.js'}
+    {src: '~/plugins/gameStats.js'},
+    {src: '~/plugins/notifications.js'}
     ],
   css: [
     '~/assets/style/app.styl'
