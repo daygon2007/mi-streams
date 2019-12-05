@@ -128,7 +128,7 @@
     },
     created () {
       this.loading = true
-      axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
+      axios.get('https://www.wickedvicious.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
         .then(response => {
           this.users = response.data
           this.mixerUser = this.users[0].acf.mixer_user_name
