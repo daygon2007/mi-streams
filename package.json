@@ -16,7 +16,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.1.0",
     "@fortawesome/vue-fontawesome": "^0.1.5",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "nuxt": "^1.0.0",
     "vuetify": "^1.5.6"
   },

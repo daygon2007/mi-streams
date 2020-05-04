@@ -164,7 +164,7 @@
           // console.log(this.twitchUser)
           /* ==========CALL TWITCH========== */
           if (this.twitchUser !== '') {
-            axios.get('https://api.twitch.tv/helix/streams?user_login=' + this.twitchUser, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Accept': 'application/vnd.twitchtv.v5+json' } })
+            axios.get('https://api.twitch.tv/helix/streams?user_login=' + this.twitchUser, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol'/*, 'Accept': 'application/vnd.twitchtv.v5+json'*/ } })
               .then(res => {
                 this.twitch = res.data
                 //  console.log(res.data)
@@ -173,7 +173,7 @@
                 // console.log(this.twitch.data[0].type)
                 if (this.twitch.data[0].type === 'live') {
                   this.twitchOnline = true
-                  axios.get('https://api.twitch.tv/helix/games?id=' + this.twitch.data[0].game_id, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Accept': 'application/vnd.twitchtv.v5+json' } })
+                  axios.get('https://api.twitch.tv/helix/games?id=' + this.twitch.data[0].game_id, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol'/*, 'Accept': 'application/vnd.twitchtv.v5+json' */} })
                     .then(response => {
                       this.game = response.data.data[0].name
                       console.log(response)
