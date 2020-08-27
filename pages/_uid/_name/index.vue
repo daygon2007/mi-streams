@@ -164,7 +164,7 @@
           // console.log(this.twitchUser)
           /* ==========CALL TWITCH========== */
           if (this.twitchUser !== '') {
-            axios.get('https://api.twitch.tv/helix/streams?user_login=' + this.twitchUser, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Accept': 'application/vnd.twitchtv.v5+json' } })
+            axios.get('https://api.twitch.tv/helix/streams?user_login=' + this.twitchUser, { 'headers': { 'Client-ID': 'a039tkgg05y0fuwvt174q6gjqj4lol', 'Authorization': 'Bearer 40njbcmn5opqh97jv76la09t0j7bld', 'Accept': 'application/vnd.twitchtv.v5+json' } })
               .then(res => {
                 this.twitch = res.data
                 //  console.log(res.data)
