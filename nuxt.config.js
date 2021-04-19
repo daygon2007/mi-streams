@@ -1,5 +1,6 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = (dir) => require('path').join(__dirname, dir)
+require('webpack-node-externals')
 
 module.exports = {
   /*
