@@ -1,11 +1,6 @@
 <template>
     <div>
-      <v-alert v-model="alertA" dismissible type="warning" outline>
-        This app is currently in Alpha so there might be some bugs. As of now stats will only support PC versions of select games, however, work will be done to support all platforms in the future.
-      </v-alert>
-      <v-alert v-model="alertB" dismissible type="success" outline>
-        Currently Supported Games: Apex Legends, Fortnite, & PlayerUnknown's Battlegrounds
-      </v-alert>
+      <Notifications></Notifications>
       <v-layout row wrap v-if="loading">
       <v-flex xs-12 class="text-xs-center" mt-5>
         <v-progress-circular
@@ -99,10 +94,12 @@
   import axios from 'axios'
   import VueTwitchPlayer from 'vue-twitch-player'
   import GameStats from '~/components/GameStats.vue'
+  import Notifications from '~/components/Notifications.vue'
   export default {
     components: {
       VueTwitchPlayer,
-      GameStats
+      GameStats,
+      Notifications
     },
     data () {
       return {
@@ -131,7 +128,7 @@
     },
     created () {
       this.loading = true
-      axios.get('http://www.wickedvicious.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
+      axios.get('https://www.wickedvicious.com/wp-json/wp/v2/streamers?filter[name]=' + this.$route.params.name)
         .then(response => {
           this.users = response.data
           this.mixerUser = this.users[0].acf.mixer_user_name
